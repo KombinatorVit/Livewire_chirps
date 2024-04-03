@@ -36,4 +36,5 @@ class TreatmentsChart extends ChartWidget
     {
         return 'line';
     }
+
 }

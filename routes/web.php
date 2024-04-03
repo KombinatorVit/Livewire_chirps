@@ -1,9 +1,11 @@
 <?php
 
 use App\Http\Controllers\ChirpController;
+use App\Livewire\Counter;
 use Illuminate\Support\Facades\Route;
 
-Route::view('/', 'welcome');
+Route::get('/counter', Counter::class);
+Route::view('/welcome', 'welcome',);
 
 
 Route::get('chirps', [ChirpController::class, 'index'])

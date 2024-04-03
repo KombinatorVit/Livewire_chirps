@@ -12,6 +12,7 @@ class Chirp extends Model
     use HasFactory;
 
 
+
     protected $fillable = [
         'message',
     ];
@@ -26,6 +27,7 @@ class Chirp extends Model
     {
         return $this->belongsTo(User::class);
     }
+
 
 
 }
