@@ -2,26 +2,35 @@
 
 namespace App\Livewire;
 
+use Livewire\Attributes\Title;
 use Livewire\Component;
 
+
+#[Title('Todos')]
 class Todos extends Component
 {
 
 
     public $todos = [
-
+'Learn Livewire',
     ];
 
     public $newTodo = '';
 
-    public function mount()
+    public function updated($property, $value): void
     {
-        $this->todos = [
-            'Learn Livewire',
-            'Build something awesome'
-        ];
-        $this->newTodo = '';
+
+        $this->$property = strtoupper($value);
     }
+
+//    public function mount()
+//    {
+//        $this->todos = [
+//            'Learn Livewire',
+//            'Build something awesome'
+//        ];
+//        $this->newTodo = 'Type here';
+//    }
 
     function addTodo(): void
     {

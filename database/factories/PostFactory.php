@@ -21,6 +21,7 @@ class PostFactory extends Factory
             'body' => $this->faker->paragraph(),
             'is_published' => $this->faker->boolean(),
             'user_id' => $this->faker->numberBetween(1, 2),
+            'archived' => $this->faker->boolean(),
 
         ];
     }

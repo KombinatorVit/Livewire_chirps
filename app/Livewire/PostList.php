@@ -15,6 +15,13 @@ class PostList extends Component
         $this->posts = Post::all();
     }
 
+    public function delete(Post $post)
+    {
+        $post->delete();
+
+        $this->posts = Post::query()->get();
+    }
+
 
     public function render()
     {

@@ -1,7 +1,7 @@
-<div>
+<div class="container mx-auto px-4 py-8">
 
     <form wire:submit="addTodo">
-        <input type="text" wire:model.live="newTodo">
+        <input type="text" wire:model="newTodo">
 
 
         <span>{{$newTodo}} </span>
