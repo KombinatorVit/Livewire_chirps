@@ -9,16 +9,25 @@ class Todos extends Component
 
 
     public $todos = [
-        'Learn Livewire',
-        'Build something awesome'
+
     ];
 
     public $newTodo = '';
 
-    function addTodo()
+    public function mount()
+    {
+        $this->todos = [
+            'Learn Livewire',
+            'Build something awesome'
+        ];
+        $this->newTodo = '';
+    }
+
+    function addTodo(): void
     {
         $this->todos[] = $this->newTodo;
-        $this->newTodo = '';
+//        $this->newTodo = '';
+        $this->reset('newTodo');
 
     }
 

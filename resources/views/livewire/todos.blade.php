@@ -1,9 +1,15 @@
 <div>
 
-    <input type="text" wire:model="newTodo">
+    <form wire:submit="addTodo">
+        <input type="text" wire:model.live="newTodo">
 
-    <button wire:click="addTodo" class=" text-start text-sm leading-5 text-gray-700 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 transition duration-150 ease-in-out px-4 py-2">Add Todo</button>
 
+        <span>{{$newTodo}} </span>
+        <button type="submit"
+                class=" text-start text-sm leading-5 text-gray-700 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 transition duration-150 ease-in-out px-4 py-2">
+            Add Todo
+        </button>
+    </form>
     <ul>
         @if( count($todos))
             @foreach ($todos as $todo)
